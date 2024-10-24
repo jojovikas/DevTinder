@@ -11,16 +11,20 @@ const express = require("express");
 
 const app = express();
 
-app.use("/contact", (req, res) => {
-  res.send("this is our contact us page");
+// app.use("/user", (req, res) => {
+//   res.send("Master");
+// });
+
+app.get("/user", (req, res) => {
+  res.send({ firstName: "Vikas", lastName: "Kumar" });
 });
 
-app.use("/service", (req, res) => {
-  res.send("This is our  Service page");
+app.post("/user", (req, res) => {
+  res.send("Data POST Succesfully");
 });
 
-app.use("/about", (req, res) => {
-  res.send("this is about us page");
+app.delete("/user", (req, res) => {
+  res.send("Data Delete Succesfully");
 });
 
 app.listen(8888, () => {
